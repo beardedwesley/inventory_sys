@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ims.Controller.AddPartLayoutController">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="200.0">
+               <children>
+                  <Label text="ID" />
+                  <Region prefWidth="15.0" />
+                  <TextField fx:id="idTxt" editable="false" text="Auto-Generated" />
+               </children>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="200.0">
+               <children>
+                  <Label text="Name" />
+                  <Region prefHeight="83.0" prefWidth="15.0" />
+                  <TextField fx:id="nameTxt" promptText="Part Name" />
+               </children>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="200.0">
+               <children>
+                  <Label text="Inventory" />
+                  <Region prefHeight="83.0" prefWidth="15.0" />
+                  <TextField fx:id="inventoryTxt" promptText="Current Inventory" />
+               </children>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="200.0">
+               <children>
+                  <Label text="Price/Cost" />
+                  <Region prefHeight="83.0" prefWidth="15.0" />
+                  <TextField fx:id="priceTxt" promptText="Sale Price/Buy Price" />
+               </children>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="200.0">
+               <children>
+                  <Label text="Max" />
+                  <Region prefWidth="10.0" />
+                  <TextField fx:id="maxTxt" prefHeight="25.0" prefWidth="80.0" promptText="Max Inv" />
+                  <Region prefWidth="25.0" />
+                  <Label text="Min" />
+                  <Region prefWidth="10.0" />
+                  <TextField fx:id="minTxt" prefHeight="25.0" prefWidth="80.0" promptText="Min Inv" />
+               </children>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="companyLbl" text="Company Name" />
+                  <Region prefHeight="84.0" prefWidth="15.0" />
+                  <TextField fx:id="companyTxt" promptText="Manufacturer" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <VBox>
+         <children>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <Region prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveNewPart" prefHeight="30.0" prefWidth="60.0" text="Save" />
+                  <Region prefWidth="30.0" HBox.hgrow="NEVER" />
+                  <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelAddPart" prefHeight="30.0" prefWidth="60.0" text="Cancel" />
+                  <Region prefWidth="50.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Region prefHeight="25.0" />
+         </children>
+      </VBox>
+   </bottom>
+   <top>
+      <VBox>
+         <children>
+            <Region minHeight="25.0" VBox.vgrow="ALWAYS" />
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <Region prefWidth="40.0" />
+                  <Label alignment="TOP_LEFT" text="Add Part">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Region prefWidth="30.0" />
+                  <VBox>
+                     <children>
+                        <Region VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <RadioButton fx:id="inhouseRbtn" mnemonicParsing="false" onAction="#handleInhouseSelected" text="In-House">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="partType" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <Region prefWidth="25.0" HBox.hgrow="NEVER" />
+                              <RadioButton fx:id="outsourcedRbtn" mnemonicParsing="false" onAction="#handleOutSourcedSelected" selected="true" text="Outsourced" toggleGroup="$partType" />
+                           </children>
+                        </HBox>
+                        <Region VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Region prefHeight="25.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <Region prefWidth="70.0" />
+   </left>
+   <right>
+      <Region prefWidth="50.0" />
+   </right>
+</BorderPane>

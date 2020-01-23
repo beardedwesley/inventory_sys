@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1480.0" stylesheets="@mainStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ims.Controller.MainLayoutController">
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#handleQuit" text="Exit" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="25.0" right="25.0" />
+         </padding>
+      </HBox>
+
+   </bottom>
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Inventory Management System" />
+            <Region HBox.hgrow="ALWAYS" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <left>
+      <Region prefHeight="384.0" prefWidth="68.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Region prefHeight="384.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label text="Parts" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="partSearchBtn" mnemonicParsing="false" onAction="#handlePartSearch" text="Search" />
+                        <TextField fx:id="partSearchTxt" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="partTbl" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="partIdCol" prefWidth="170.0" text="Part ID" />
+                      <TableColumn fx:id="partNameCol" prefWidth="170.0" text="Part Name" />
+                        <TableColumn fx:id="partInventoryCol" prefWidth="170.0" text="Inventor Level" />
+                        <TableColumn fx:id="partPriceCol" prefWidth="170.0" text="Price/Cost per unit" />
+                    </columns>
+                  </TableView>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="partAddBtn" mnemonicParsing="false" onAction="#handlePartAdd" text="Add" />
+                        <Button fx:id="partModBtn" mnemonicParsing="false" onAction="#handlePartMod" text="Modify" />
+                        <Button fx:id="partDelBtn" mnemonicParsing="false" onAction="#handlePartDelete" text="Delete" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label text="Products" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="productSearchBtn" mnemonicParsing="false" onAction="#handleProductSearch" text="Search" />
+                        <TextField fx:id="productSearchTxt" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></HBox>
+                  <TableView fx:id="productTbl" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="productIdCol" prefWidth="170.0" text="Product ID" />
+                      <TableColumn fx:id="productNameCol" prefWidth="170.0" text="Product Name" />
+                        <TableColumn fx:id="productInventoryCol" prefWidth="170.0" text="Inventory Level" />
+                        <TableColumn fx:id="productPriceCol" prefWidth="170.0" text="Price per unit" />
+                    </columns>
+                  </TableView>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="productAddBtn" mnemonicParsing="false" onAction="#handleProductAdd" text="Add" />
+                        <Button fx:id="productModBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleProductMod" text="Modify" />
+                        <Button fx:id="productDelBtn" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleProductDelete" text="Delete" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></HBox>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>
